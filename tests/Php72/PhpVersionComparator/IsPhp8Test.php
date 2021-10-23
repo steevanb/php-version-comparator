@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Steevanb\PhpVersionCompare\Tests\Php70\PhpVersionComparator;
+namespace Steevanb\PhpVersionCompare\Tests\Php72\PhpVersionComparator;
 
 use PHPUnit\Framework\TestCase;
 use Steevanb\PhpVersionCompare\PhpVersion\PhpVersionComparator;
 
-final class Php8Test extends TestCase
+final class IsPhp8Test extends TestCase
 {
-    public function testIsPhp8()
+    public function testIsPhp8(): void
     {
         static::assertFalse(PhpVersionComparator::isPhp8());
     }
 
-    public function testIsPhp80()
+    public function testIsPhp80(): void
     {
         static::assertFalse(PhpVersionComparator::isPhp80());
     }
 
-    public function testIsPhp81()
+    public function testIsPhp81(): void
     {
         static::assertFalse(PhpVersionComparator::isPhp81());
     }

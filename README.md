@@ -27,9 +27,9 @@ composer require steevanb/php-version-compare ^0.0
 You can compare current PHP version with 2 versions to know if current php version is between this 2 versions:
 
 ```php
-PhpVersionCompare::isBetween('8', '9'); // return true is PHP is >= 8.0.0 and < 9.0.0
-PhpVersionCompare::isBetween('8.0', '8.1'); // return true is PHP is >= 8.0.0 and < 8.1.0
-PhpVersionCompare::isBetween('8.0.0', '8.0.2'); // return true is PHP is >= 8.0.0 and < 8.0.2
+PhpVersionComparator::isBetween('8', '9'); // return true is PHP is >= 8.0.0 and < 9.0.0
+PhpVersionComparator::isBetween('8.0', '8.1'); // return true is PHP is >= 8.0.0 and < 8.1.0
+PhpVersionComparator::isBetween('8.0.0', '8.0.2'); // return true is PHP is >= 8.0.0 and < 8.0.2
 ```
 
 ## Shortcuts for each PHP major and minor version
@@ -38,22 +38,33 @@ PhpVersionCompare::isBetween('8.0.0', '8.0.2'); // return true is PHP is >= 8.0.
 
 ```php
 // For PHP 5.3 to 5.6 
-PhpVersionCompare::isPhp5(); // return true is PHP is >= 5.0.0 and < 6.0.0
-PhpVersionCompare::isPhp53(); // return true is PHP is >= 5.3.0 and < 5.4.0
-PhpVersionCompare::isPhp54(); // return true is PHP is >= 5.4.0 and < 5.5.0
-PhpVersionCompare::isPhp55(); // return true is PHP is >= 5.5.0 and < 5.6.0
-PhpVersionCompare::isPhp56(); // return true is PHP is >= 5.6.0 and < 5.7.0
+PhpVersionComparator::isPhp5(); // return true is PHP is >= 5.0.0 and < 6.0.0
+PhpVersionComparator::isPhp53(); // return true is PHP is >= 5.3.0 and < 5.4.0
+PhpVersionComparator::isPhp54(); // return true is PHP is >= 5.4.0 and < 5.5.0
+PhpVersionComparator::isPhp55(); // return true is PHP is >= 5.5.0 and < 5.6.0
+PhpVersionComparator::isPhp56(); // return true is PHP is >= 5.6.0 and < 5.7.0
 
 // For PHP 7.0 to 7.4
-PhpVersionCompare::isPhp7(); // return true is PHP is >= 7.0.0 and < 8.0.0
-PhpVersionCompare::isPhp70(); // return true is PHP is >= 7.0.0 and < 7.1.0
-PhpVersionCompare::isPhp71(); // return true is PHP is >= 7.1.0 and < 7.2.0
-PhpVersionCompare::isPhp72(); // return true is PHP is >= 7.2.0 and < 7.3.0
-PhpVersionCompare::isPhp73(); // return true is PHP is >= 7.3.0 and < 7.4.0
-PhpVersionCompare::isPhp74(); // return true is PHP is >= 7.4.0 and < 7.5.0
+PhpVersionComparator::isPhp7(); // return true is PHP is >= 7.0.0 and < 8.0.0
+PhpVersionComparator::isPhp70(); // return true is PHP is >= 7.0.0 and < 7.1.0
+PhpVersionComparator::isPhp71(); // return true is PHP is >= 7.1.0 and < 7.2.0
+PhpVersionComparator::isPhp72(); // return true is PHP is >= 7.2.0 and < 7.3.0
+PhpVersionComparator::isPhp73(); // return true is PHP is >= 7.3.0 and < 7.4.0
+PhpVersionComparator::isPhp74(); // return true is PHP is >= 7.4.0 and < 7.5.0
 
 // For PHP 8.0 to latest 8.x
-PhpVersionCompare::isPhp8(); // return true is PHP is >= 8.0.0 and < 9.0.0
-PhpVersionCompare::isPhp80(); // return true is PHP is >= 8.0.0 and < 8.1.0
-PhpVersionCompare::isPhp81(); // return true is PHP is >= 8.1.0 and < 8.2.0
+PhpVersionComparator::isPhp8(); // return true is PHP is >= 8.0.0 and < 9.0.0
+PhpVersionComparator::isPhp80(); // return true is PHP is >= 8.0.0 and < 8.1.0
+PhpVersionComparator::isPhp81(); // return true is PHP is >= 8.1.0 and < 8.2.0
+```
+
+## Exception instead of returning the result
+
+If you want to throw an exception instead of returning the result,
+each method have it's `assert()` version who throw a `VersionIsNotBetweenException` exception:
+
+```php
+PhpVersionComparator::assertIsBetween('8', '9');
+PhpVersionComparator::assertIsPhp5();
+// etc
 ```

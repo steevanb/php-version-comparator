@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Steevanb\PhpVersionCompare\Tests\Php70\PhpVersionComparator;
+namespace Steevanb\PhpVersionCompare\Tests\Php56\PhpVersionComparator;
 
 use PHPUnit\Framework\TestCase;
 use Steevanb\PhpVersionCompare\PhpVersion\PhpVersionComparator;
 
-final class Php8Test extends TestCase
+final class IsPhp8Test extends TestCase
 {
     public function testIsPhp8()
     {

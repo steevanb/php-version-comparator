@@ -1,22 +1,20 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Steevanb\PhpVersionCompare\Tests\Php70\PhpVersionComparator;
+namespace Steevanb\PhpVersionCompare\Tests\Php56\PhpVersionComparator;
 
 use PHPUnit\Framework\TestCase;
 use Steevanb\PhpVersionCompare\PhpVersion\PhpVersionComparator;
 
-final class Php7Test extends TestCase
+final class IsPhp7Test extends TestCase
 {
     public function testIsPhp7()
     {
-        static::assertTrue(PhpVersionComparator::isPhp7());
+        static::assertFalse(PhpVersionComparator::isPhp7());
     }
 
     public function testIsPhp70()
     {
-        static::assertTrue(PhpVersionComparator::isPhp70());
+        static::assertFalse(PhpVersionComparator::isPhp70());
     }
 
     public function testIsPhp71()
