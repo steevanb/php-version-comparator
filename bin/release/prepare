@@ -140,4 +140,4 @@ updateAssertionsBadge
 updateCoverageBadge
 updateInfectionBadge
 updateComposerRequire
-updateChangelog
+#updateChangelog
