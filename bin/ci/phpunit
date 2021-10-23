@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -eu
+
+readonly ROOT_DIR="$(realpath "$(dirname "$(realpath "$0")")/../..")"
+source "${ROOT_DIR}"/bin/common.inc.bash
+
+BIN_DIR=bin/ci
+source "${ROOT_DIR}"/bin/dockerise.inc.bash
+
+phpVersion=
+phpunitParameters=
+for arg in "${@}"; do
+    if [ "${arg:0:6}" == "--php=" ]; then
+        phpVersion="${arg:6}"
+    else
+        phpunitParameters="${phpunitParameters} ${arg}"
+    fi
+done
+
+if [ "${phpVersion}" == "" ]; then
+    php8.0 "${ROOT_DIR}"/bin/ci/phpunit.php "${@}"
+else
+    echo "PHP ${phpVersion}"
+
+    readonly PHP_VERSION_UNDERSCORE=${phpVersion/./_}
+    readonly COMPOSER_HOME_VAR="COMPOSER_HOME_PHP_${PHP_VERSION_UNDERSCORE}"
+
+    export COMPOSER_HOME="${!COMPOSER_HOME_VAR}"
+
+    # Current code is installed with a path composer repository
+    # At the end: a symlink is created in composer gobal vendor
+    "php${phpVersion}" /usr/local/bin/composer global require steevanb/php-version-compare:dev-master > /dev/null 2>&1
+
+    "php${phpVersion}" \
+        "${!COMPOSER_HOME_VAR}"/vendor/bin/phpunit \
+            --configuration config/ci/phpunit.php-"${phpVersion}".xml \
+            --colors=always \
+            ${phpunitParameters}
+fi

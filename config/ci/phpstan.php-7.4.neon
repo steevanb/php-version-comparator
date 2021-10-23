@@ -1,0 +1,12 @@
+includes:
+    - phpstan.neon
+    - /composer/php-7.4/vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - /composer/php-7.4/vendor/phpstan/phpstan-phpunit/rules.neon
+    - /composer/php-7.4/vendor/phpstan/phpstan-strict-rules/rules.neon
+    - /composer/php-7.4/vendor/spaze/phpstan-disallowed-calls/extension.neon
+    - /composer/php-7.4/vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+    - /composer/php-7.4/vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+    - /composer/php-7.4/vendor/spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
+    - /composer/php-7.4/vendor/spaze/phpstan-disallowed-calls/disallowed-loose-calls.neon
+parameters:
+    tmpDir: ../../var/ci/phpstan/php-7-4
