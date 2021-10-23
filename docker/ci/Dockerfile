@@ -61,7 +61,7 @@ RUN \
     && mkdir -p "${COMPOSER_HOME_PHP_5_6}" \
     && echo "${COMPOSER_JSON}" > "${COMPOSER_HOME_PHP_5_6}"/composer.json \
     && php5.6 /usr/local/bin/composer global require phpunit/phpunit:5.7.* \
-    # We will need to run composer require steevanb/php-version-compare before running phpunit
+    # We will need to run composer require steevanb/version-comparator before running phpunit
     # and it will be done with host user and not root
     && chmod -R 777 "${COMPOSER_HOME_PHP_5_6}" \
 

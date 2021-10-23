@@ -30,7 +30,7 @@ else
 
     # Current code is installed with a path composer repository
     # At the end: a symlink is created in composer gobal vendor
-    "php${phpVersion}" /usr/local/bin/composer global require steevanb/php-version-compare:dev-master > /dev/null 2>&1
+    "php${phpVersion}" /usr/local/bin/composer global require steevanb/version-comparator:dev-master > /dev/null 2>&1
 
     "php${phpVersion}" \
         "${!COMPOSER_HOME_VAR}"/vendor/bin/phpunit \

@@ -1,7 +1,7 @@
 {
-    "name": "steevanb/php-version-compare",
+    "name": "steevanb/version-comparator",
     "type": "library",
-    "description": "Compare PHP version easiest than version_compare()",
+    "description": "Compare PHP version easier than with version_compare()",
     "license": "MIT",
     "require": {
         "php": "^5.6 || ^7.0 || ^8.0"
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Steevanb\\PhpVersionCompare\\": "src"
+            "Steevanb\\VersionComparator\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Steevanb\\PhpVersionCompare\\Tests\\": "tests"
+            "Steevanb\\VersionComparator\\Tests\\": "tests"
         }
     }
 }
