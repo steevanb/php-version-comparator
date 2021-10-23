@@ -9,7 +9,7 @@
 >
     <testsuites>
         <testsuite name="default">
-            <directory>../../tests</directory>
+            <directory>../../tests/Php80</directory>
         </testsuite>
     </testsuites>
     <coverage
