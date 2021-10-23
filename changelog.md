@@ -1,4 +1,4 @@
-## master
+### master
 
 - Rename namespace `Steevanb\PhpVersionCompare\PhpVersion` to `Steevanb\VersionComparator\Comparator`
 - Rename project to `steevanb/version-comparator`
