@@ -1,0 +1,14 @@
+parameters:
+    level: 8
+    paths:
+        - ../../src
+        - ../../tests
+    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        - '#File is missing a "declare\(strict_types=1\)" declaration\.#'
+        - '#has no return typehint specified#'
+rules:
+    - Ergebnis\PHPStan\Rules\Classes\PHPUnit\Framework\TestCaseWithSuffixRule
+    - Ergebnis\PHPStan\Rules\Expressions\NoErrorSuppressionRule
+    - Ergebnis\PHPStan\Rules\Expressions\NoIssetRule
+    - Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule

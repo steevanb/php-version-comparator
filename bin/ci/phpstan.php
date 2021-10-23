@@ -1,0 +1,47 @@
+<?php
+
+declare(strict_types=1);
+
+use Steevanb\ParallelProcess\{
+    Console\Application\ParallelProcessesApplication,
+    Process\Process,
+    Process\ProcessArray
+};
+use PhpPp\Collection\Component\Collection\StringCollection;
+use steevanb\PhpTypedArray\ScalarArray\StringArray;
+use Symfony\Component\Console\Input\ArgvInput;
+
+require $_SERVER['COMPOSER_HOME_PHP_8_0'] . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/vendor/autoload.php';
+
+function createPhpstanProcesses(string $phpVersion = null): ProcessArray
+{
+    $phpVersions = new StringArray(is_string($phpVersion) ? [$phpVersion] : ['7.1', '7.2', '7.3', '7.4', '8.0']);
+
+    $return = new ProcessArray();
+    foreach ($phpVersions as $loopPhpVersion) {
+        $return[] = createPhpstanProcess($loopPhpVersion);
+    }
+
+    return $return;
+}
+
+function createPhpstanProcess(string $phpVersion): Process
+{
+    return (new Process([__DIR__ . '/phpstan', '--php=' . $phpVersion]))
+        ->setName('phpstan --php=' . $phpVersion);
+}
+
+$phpVersion = null;
+$applicationArgv = new StringArray();
+foreach ($argv as $arg) {
+    if (substr($arg, 0, 6) === '--php=') {
+        $phpVersion = substr($arg, 6);
+    } else {
+        $applicationArgv[] = $arg;
+    }
+}
+
+(new ParallelProcessesApplication())
+    ->addProcesses(createPhpstanProcesses($phpVersion))
+    ->run(new ArgvInput($applicationArgv->toArray()));

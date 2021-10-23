@@ -1,0 +1,29 @@
+{
+    "name": "steevanb/php-version-compare",
+    "type": "library",
+    "description": "Compare PHP version easiest than version_compare()",
+    "license": "MIT",
+    "require": {
+        "php": "^5.6 || ^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "ext-simplexml": "*",
+        "phpunit/phpunit": "9.5.*",
+        "steevanb/php-backtrace": "2.1.*",
+        "symfony/var-dumper": "5.3.*"
+    },
+    "config": {
+        "cache-dir": "/app/var/composer/cache",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Steevanb\\PhpVersionCompare\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Steevanb\\PhpVersionCompare\\Tests\\": "tests"
+        }
+    }
+}
