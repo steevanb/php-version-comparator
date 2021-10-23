@@ -1,8 +1,8 @@
 <?php
 
-namespace Steevanb\PhpVersionCompare\Exception;
+namespace Steevanb\VersionComparator\Exception;
 
-class VersionIsNotBetweenException extends PhpVersionCompareException
+class VersionIsNotBetweenException extends VersionComparatorException
 {
     /**
      * @param string $version
