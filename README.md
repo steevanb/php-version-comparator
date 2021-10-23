@@ -1,8 +1,8 @@
 [![Version](https://img.shields.io/badge/version-0.1.0-4B9081.svg)](https://github.com/steevanb/php-version-comparator/tree/0.1.0)
-[![License](https://poser.pugx.org/steevanb/php-version-comparator/license)](https://github.com/steevanb/php-version-comparator/blob/master/LICENSE)
+[![License](https://poser.pugx.org/steevanb/version-comparator/license)](https://github.com/steevanb/php-version-comparator/blob/master/LICENSE)
 [![PHP](https://img.shields.io/badge/php-^5.3||^7.0||^8.0-blue.svg)](https://php.net)
 ![Lines](https://img.shields.io/badge/code%20lines-4,558-blue.svg)
-![Downloads](https://poser.pugx.org/steevanb/php-version-comparator/downloads)
+![Downloads](https://poser.pugx.org/steevanb/version-comparator/downloads)
 
 [![CI](https://github.com/steevanb/php-version-comparator/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/steevanb/php-version-comparator/actions/workflows/ci.yml)
 ![Tests](https://img.shields.io/badge/tests-40-blue.svg)
