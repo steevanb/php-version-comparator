@@ -1,5 +1,7 @@
 ### master
 
+### [0.2.0](../../compare/0.1.0...0.2.0) - 2021-10-23
+
 - Rename namespace `Steevanb\PhpVersionCompare\PhpVersion` to `Steevanb\VersionComparator\Comparator`
 - Rename project to `steevanb/version-comparator`
 
